@@ -27,6 +27,13 @@ public abstract class Inter {
         return instance;
     }
 
+    /**
+     * Sets the Inter API implementation. This is done automatically,
+     * and any other calls of this method will throw an exception.
+     *
+     * @param i Inter implementation
+     * @throws IllegalStateException if the instance is already set
+     */
     public static void setInstance(Inter i) {
         if (instance == null) {
             instance = i;
