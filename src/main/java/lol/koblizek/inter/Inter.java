@@ -14,6 +14,12 @@ public abstract class Inter {
     private EventManager eventManager;
     private static Inter instance;
 
+    /**
+     * Returns the configured instance of Inter.
+     * Instance is configured <b>automatically</b>.
+     *
+     * @return Inter instance
+     */
     public static Inter getInstance() {
         return instance;
     }
@@ -29,6 +35,10 @@ public abstract class Inter {
         return SYSTEM_LOGGER;
     }
 
+    /**
+     * Returns the instance of the EventManager, which is used to register/invoke events.
+     * @return EventManager instance
+     */
     public EventManager getEventManager() {
         return eventManager;
     }
