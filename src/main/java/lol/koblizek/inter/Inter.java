@@ -1,6 +1,7 @@
 package lol.koblizek.inter;
 
 import lol.koblizek.inter.api.*;
+import lol.koblizek.inter.client.AbstractClient;
 import lol.koblizek.inter.event.EventManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -94,4 +95,19 @@ public abstract class Inter {
             getSystemLogger().warn("Required: " + required + ", current: " + getEnvironment());
         }
     }
+
+    /**
+     * Returns the client-side API used to interact with the client in various ways,
+     * such as:
+     * <ul>
+     *     <li>Rendering</li>
+     *     <li>Input</li>
+     *     <li>GUI/Overlays</li>
+     * </ul>
+     * This method is only available to in the client environment, any calls to this method
+     * in the server environment will return null.
+     * @return Instance of the client-side API
+     */
+    @OnlyIn(side = Environment.CLIENT)
+    public abstract AbstractClient getClient();
 }
