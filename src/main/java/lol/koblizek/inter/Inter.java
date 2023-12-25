@@ -87,4 +87,11 @@ public abstract class Inter {
 
     public abstract List<Mod> getPlugins();
     public abstract Mod.Metadata getMetadata(Mod mod);
+
+    public void checkEnvironment(Environment required) {
+        if (getEnvironment() != Environment.BOTH || required != getEnvironment()) {
+            getSystemLogger().warn("Plugin has attempted to invoke a call that is not supported in current environment");
+            getSystemLogger().warn("Required: " + required + ", current: " + getEnvironment());
+        }
+    }
 }
