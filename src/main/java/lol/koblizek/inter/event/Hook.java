@@ -16,7 +16,8 @@ public interface Hook<E extends Event> {
     /**
      * Represents a result of a hook call.
      * <p>
-     *     If a hook returns {@link TypedResult#CANCEL}, the event will not be passed to any more hooks.
+     *     If a hook returns {@link TypedResult#CANCEL}, the event will not be passed to any more hooks,
+     *     and thing that was supposed to happen will not happen.
      * </p>
      */
     enum TypedResult {
