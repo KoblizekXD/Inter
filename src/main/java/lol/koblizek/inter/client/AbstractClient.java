@@ -9,6 +9,19 @@ public abstract class AbstractClient {
     public abstract Gui getActiveGui();
 
     /**
+     * @return true if the player is in game, false otherwise
+     */
+    public abstract boolean isInGame();
+
+    /**
+     * Gets the current overlay instance.
+     * Overlays are present only in game.
+     *
+     * @return overlay instance, null if no overlay is present
+     */
+    public abstract Overlay getOverlay();
+
+    /**
      * Sets the current gui to be used.
      * This will automatically close the previous gui.
      *
