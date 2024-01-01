@@ -1,4 +1,4 @@
 package lol.koblizek.inter.client;
 
-public class Overlay {
+public abstract class Overlay extends Gui {
 }
