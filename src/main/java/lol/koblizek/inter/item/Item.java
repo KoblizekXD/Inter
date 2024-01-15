@@ -1,9 +1,10 @@
 package lol.koblizek.inter.item;
 
 import lol.koblizek.inter.Inter;
+import lol.koblizek.inter.core.Identifiable;
 import lol.koblizek.inter.core.Key;
 
-public class Item {
+public class Item implements Identifiable {
     private final Key key;
 
     public Item(Key key) {
@@ -17,6 +18,11 @@ public class Item {
     private static Item copyVanilla(String name) {
         Key k = new Key("minecraft", name);
         return new VanillaItem(k);
+    }
+
+    @Override
+    public Key getKey() {
+        return key;
     }
 
     private static final class VanillaItem extends Item {

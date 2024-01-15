@@ -14,4 +14,5 @@ public abstract class Registry<T extends Identifiable> {
     abstract void register(T entry);
     abstract void freeze();
     abstract boolean isFrozen();
+    abstract T get(Key key);
 }
